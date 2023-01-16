@@ -1,8 +1,10 @@
+import { DateTime } from './luxon.js';
+
 const date = document.querySelector('#currentDate');
 
 const updateClock = () => {
-  const now = new Date();
-  date.innerHTML = now.toString().substring(0, 21);
+  const now = DateTime.now();
+  date.innerHTML = now.toLocaleString(DateTime.DATETIME_FULL);
 };
 
 export default updateClock;
